@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.sp
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             MaterialTheme {
                 Surface(
@@ -26,10 +27,16 @@ class MainActivity : ComponentActivity() {
                             .padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        Text("MCX SMART TRADER", fontSize = 25.sp)
-                        Text("Crude Oil Mini | 5-minute")
+                        Text(
+                            "MCX SMART TRADER",
+                            fontSize = 26.sp
+                        )
 
-                        Card(Modifier.fillMaxWidth()) {
+                        Text("Crude Oil Mini | 5-Minute Trading")
+
+                        Card(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
                             Column(Modifier.padding(16.dp)) {
                                 Text("PAPER TRADING")
                                 Text("Risk per trade: 0.5%")
@@ -37,26 +44,32 @@ class MainActivity : ComponentActivity() {
                             }
                         }
 
-                        Card(Modifier.fillMaxWidth()) {
+                        Card(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
                             Column(Modifier.padding(16.dp)) {
                                 Text("MARKET PRICE")
-                                Text("ডেটা সংযুক্ত নয়", fontSize = 22.sp)
-                                Text("লাইভ দাম পরে যুক্ত হবে।")
+                                Text("DATA NOT CONNECTED", fontSize = 22.sp)
+                                Text("লাইভ মার্কেট ডেটা এখনও যুক্ত হয়নি।")
                             }
                         }
 
-                        Card(Modifier.fillMaxWidth()) {
+                        Card(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
                             Column(Modifier.padding(16.dp)) {
                                 Text("TRADING SIGNAL")
                                 Text("WAIT", fontSize = 26.sp)
-                                Text("সিগন্যাল ব্যবস্থা এখনও চালু নয়।")
+                                Text("EMA 9/21 এবং RSI 14 এখনও চালু নয়।")
                             }
                         }
 
-                        Card(Modifier.fillMaxWidth()) {
+                        Card(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
                             Column(Modifier.padding(16.dp)) {
                                 Text("OPEN POSITION")
-                                Text("কোনও Paper Trade খোলা নেই")
+                                Text("No Open Paper Trade")
                             }
                         }
 
@@ -82,7 +95,8 @@ class MainActivity : ComponentActivity() {
                         }
 
                         Text(
-                            "প্রাথমিক Dashboard। লাইভ ডেটা ও ট্রেডিং এখনও বন্ধ।"
+                            "MCX Smart Trader - Initial Dashboard. " +
+                            "Paper trading only. Live orders disabled."
                         )
                     }
                 }
